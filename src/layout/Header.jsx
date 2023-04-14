@@ -23,6 +23,8 @@ const Container = styled("header")`
   justify-content: space-between;
   width: 100%;
   padding: 20px 130px 20px 130px;
+  font-family: Inter;
+  font-weight: 600;
 `;
 
 const Nav = styled("nav")`
