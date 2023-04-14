@@ -6,7 +6,6 @@ import prev from "../../assets/icon/arrowLeft.svg";
 import next from "../../assets/icon/nextArrow.svg";
 import styled from "@emotion/styled";
 import house from "../../assets/image/house.png";
-import { Box } from "@mui/material";
 
 const PrevArrow = ({ onClick }) => (
   <PrevIcon onClick={onClick} src={prev} alt="prev-arrow" />
@@ -42,7 +41,15 @@ export const MySlider = () => {
   );
 };
 
-const SliderContainer = styled(Box)``;
+const SliderContainer = styled("div")`
+  .my-slider {
+    width: 100%;
+  }
+
+  .my-slider .slick-track {
+    display: flex;
+  }
+`;
 
 const PrevIcon = styled("img")`
   position: absolute;
