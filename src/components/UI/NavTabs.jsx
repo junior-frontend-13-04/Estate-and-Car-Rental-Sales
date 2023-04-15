@@ -36,6 +36,9 @@ const Tabs = styled(MuiTabs)(() => ({
     fontFamily: "Montserrat",
     fontWeight: 600,
     fontSize: "14px",
+    ":hover": {
+      border: "1.5px solid #FF9505",
+    },
   },
   "& .MuiTabs-flexContainer": {
     gap: "100px",
@@ -45,5 +48,8 @@ const Tabs = styled(MuiTabs)(() => ({
   },
   "& .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected": {
     color: "white",
+    ":hover": {
+      color: "#FF9505",
+    },
   },
 }));

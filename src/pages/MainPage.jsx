@@ -3,47 +3,44 @@ import { Header } from "../layout/Header";
 import { styled } from "@mui/material";
 import backgroundImage from "../assets/image/Rectangle.png";
 import { Card } from "../components/UI/Card";
-import { Button } from "../components/UI/Button";
+import NavTabs from "../components/UI/NavTabs";
+import { DATA_TABS } from "../utils/consts";
 
-export const MainPage = () => {
+const MainPage = () => {
+  const renderTabs = () => {
+    return DATA_TABS.map((tab) => (
+      <NavTabs key={tab.id} label={tab.label} link={tab.link} />
+    ));
+  };
+
   return (
-    <MainContainer>
-      <TopPart>
+    <Container>
+      <TopSection>
         <Header />
-        <Heading>
-          Find Your{" "}
-          <span>
-            Dream Home
-            <br />{" "}
-          </span>
-          @ Metaverse
-        </Heading>
-      </TopPart>
-      <Main>
+        <Title>
+          Find Your <span>Dream Home</span>
+          <br /> @ Metaverse
+        </Title>
+      </TopSection>
+      <MainSection>
         <Section>
-          <Button>all</Button>
-          <Button>Sdudio</Button>
-          <Button>1 Bed Room</Button>
-          <Button>2 Bed Room</Button>
-          <InnerSection>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </InnerSection>
+          <TabsContainer>{renderTabs()}</TabsContainer>
+          <CardsContainer>
+            {[...Array(6)].map((_, i) => (
+              <Card key={i} />
+            ))}
+          </CardsContainer>
         </Section>
-      </Main>
-    </MainContainer>
+      </MainSection>
+    </Container>
   );
 };
 
-const MainContainer = styled("div")`
+const Container = styled("div")`
   width: 100%;
 `;
 
-const TopPart = styled("div")`
+const TopSection = styled("div")`
   background-image: url(${backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,39 +48,44 @@ const TopPart = styled("div")`
   height: 100vh;
 `;
 
-const Main = styled("div")`
-  width: inherit;
-  background: linear-gradient(
-    357.33deg,
-    #1b1b1b 22.15%,
-    rgba(27, 27, 27, 0.535551) 56.13%,
-    rgba(27, 27, 27, 0.18) 81.14%,
-    rgba(27, 27, 27, 0) 106.02%
-  );
+const MainSection = styled("div")`
+  width: 100%;
+  background-color: #000000;
+  padding-top: 63px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 `;
 
-const Heading = styled("h1")`
+const Title = styled("h1")`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
   letter-spacing: 0.03em;
-  margin-top: 240px;
+  margin: 240px 0px 0px 130px;
   color: white;
+
   span {
     color: #ff9505;
   }
 `;
 
 const Section = styled("div")`
-  padding: 0px 130px 0px 130px;
+  padding: 0px 130px;
   width: 100%;
 `;
 
-const Content = styled("div")``;
+const TabsContainer = styled("div")`
+  display: flex;
+  gap: 24px;
+  padding-bottom: 32px;
+`;
 
-const InnerSection = styled("div")`
+const CardsContainer = styled("div")`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+
+export default MainPage;

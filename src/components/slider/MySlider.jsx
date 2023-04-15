@@ -25,25 +25,19 @@ export const MySlider = () => {
   };
 
   return (
-    <SliderContainer>
-      <Slider {...settings}>
-        <div>
-          <Image src={house} alt="" />
-        </div>
-        <div>
-          <Image src={house} alt="" />
-        </div>
-        <div>
-          <Image src={house} alt="" />
-        </div>
-      </Slider>
-    </SliderContainer>
+    <Slider {...settings}>
+      <div>
+        <Image src={house} alt="" />
+      </div>
+      <div>
+        <Image src={house} alt="" />
+      </div>
+      <div>
+        <Image src={house} alt="" />
+      </div>
+    </Slider>
   );
 };
-
-const SliderContainer = styled("div")`
-  --arrow-size: 50px;
-`;
 
 const ArrowIcon = styled("div")`
   position: absolute;

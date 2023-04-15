@@ -5,26 +5,28 @@ import { Button } from "./Button";
 export const Card = ({ image, price, bedrooms, bath, sq }) => {
   return (
     <Container>
-      <MySlider />
-      <HouseInfo>
-        <TopPart>
-          <h1 className="price">100.000 $</h1>
-          <Button>View Details</Button>
-        </TopPart>
-        <InfoContainer>
-          <Info>1 Bedrooms</Info>
-          <Info
-            border={{
-              left: "1px solid rgba(255, 251, 251, 0.35)",
-              rigth: "1px solid rgba(255, 251, 251, 0.35)",
-              width: "200px",
-            }}
-          >
-            1 Bath
-          </Info>
-          <Info> 535 sq ft</Info>
-        </InfoContainer>
-      </HouseInfo>
+      <div>
+        <MySlider />
+        <HouseInfo>
+          <TopPart>
+            <h1 className="price">100.000 $</h1>
+            <Button>View Details</Button>
+          </TopPart>
+          <InfoContainer>
+            <Info>1 Bedrooms</Info>
+            <Info
+              border={{
+                left: "1px solid rgba(255, 251, 251, 0.35)",
+                rigth: "1px solid rgba(255, 251, 251, 0.35)",
+                width: "200px",
+              }}
+            >
+              1 Bath
+            </Info>
+            <Info> 535 sq ft</Info>
+          </InfoContainer>
+        </HouseInfo>
+      </div>
     </Container>
   );
 };

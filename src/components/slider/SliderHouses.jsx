@@ -27,8 +27,7 @@ export const SliderHouses = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    dots: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
     beforeChange: (current, next) => setSlideIndex(next),
@@ -52,13 +51,10 @@ export const SliderHouses = () => {
 const SliderContainer = styled(Box)`
   --slide-height: 50vh;
   --arrow-size: 50px;
-  width: 70%;
+  width: 90%;
   .slick-track {
     display: flex;
     gap: 20px;
-    height: var(--slide-height);
-  }
-  .slick-dots li {
   }
 `;
 
@@ -89,13 +85,14 @@ const Slide = styled("div")`
   width: 100%;
   height: var(--slide-height);
   overflow: hidden;
-  border-radius: 10px;
   transition: filter 0.3s ease-in-out;
   filter: brightness(${(props) => (props.isActive ? 1 : 0.5)});
+  border: 10px solid white;
+  border-radius: 8px;
 `;
 
 const Image = styled("img")`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 `;
