@@ -25,6 +25,8 @@ const Container = styled("header")`
   padding: 20px 130px 20px 130px;
   font-family: Inter;
   font-weight: 600;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 const Nav = styled("nav")`
