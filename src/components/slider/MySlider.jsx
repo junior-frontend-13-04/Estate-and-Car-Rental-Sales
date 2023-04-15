@@ -45,7 +45,6 @@ const SliderContainer = styled("div")`
   .my-slider {
     width: 100%;
   }
-
   .my-slider .slick-track {
     display: flex;
   }
