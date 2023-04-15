@@ -8,10 +8,10 @@ import styled from "@emotion/styled";
 import house from "../../assets/image/house.png";
 
 const PrevArrow = ({ onClick }) => (
-  <PrevIcon onClick={onClick} src={prev} alt="prev-arrow" />
+  <ArrowIcon onClick={onClick} className="prev" prev={next} />
 );
 const NextArrow = ({ onClick }) => (
-  <NextIcon onClick={onClick} src={next} alt="next-arrow" />
+  <ArrowIcon onClick={onClick} className="next" next={prev} />
 );
 
 export const MySlider = () => {
@@ -42,28 +42,35 @@ export const MySlider = () => {
 };
 
 const SliderContainer = styled("div")`
-  .my-slider {
-    width: 100%;
-  }
-
-  .my-slider .slick-track {
-    display: flex;
-  }
+  --arrow-size: 50px;
 `;
 
-const PrevIcon = styled("img")`
+const ArrowIcon = styled("div")`
   position: absolute;
-  left: 700px;
-  top: 250px;
-  cursor: pointer;
-  z-index: 2;
-`;
-const NextIcon = styled("img")`
-  position: absolute;
-  top: 250px;
-  left: 30px;
-  cursor: pointer;
-  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #585858;
+  background-color: #585858;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.3;
+  border-radius: 0px 8px 0px 0px;
+
+  &.prev {
+    left: 0px;
+    z-index: 2;
+    background-image: url(${(p) => p.prev});
+    cursor: pointer;
+  }
+  &.next {
+    right: 0px;
+    z-index: 2;
+    background-image: url(${(p) => p.next});
+    cursor: pointer;
+  }
 `;
 
 const Image = styled("img")`
